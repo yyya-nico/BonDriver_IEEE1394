@@ -1,0 +1,5 @@
+﻿LIBRARY "BonDriver_IEEE1394"
+
+EXPORTS
+    CreateBonDriver
+    CreateBonStruct
