@@ -2,7 +2,7 @@
 
 ## 概要
 
-BonDriver_IEEE1394は、IEEE 1394（FireWire/i.LINK）接続のDV機器からTSストリームを取得し、テープ操作を行うためのBonDriverです。
+BonDriver_IEEE1394は、IEEE 1394（FireWire/i.LINK）接続のD-VHSなどのHDV機器からTSストリームを取得し、テープ操作を行うためのBonDriverです。
 
 ## インストール
 
@@ -27,9 +27,8 @@ C:\Program Files\TVTest\BonDriver\BonDriver_IEEE1394.ini
 
 以下のIEEE 1394デバイスに対応しています：
 
-- DVカメラ（Sony DCR-VX2000など）
 - D-VHSデッキ
-- DVデッキ
+- HDVカメラ
 - その他のAV/C準拠テープレコーダー/プレイヤー
 
 ## 接続方法
@@ -37,7 +36,7 @@ C:\Program Files\TVTest\BonDriver\BonDriver_IEEE1394.ini
 ### 1. ハードウェア接続
 
 1. IEEE 1394ケーブル（FireWireケーブル）でPCとDV機器を接続
-2. DV機器の電源を入れる
+2. HDV機器の電源を入れる
 3. テープを挿入（再生する場合）
 
 ### 2. Windowsでの確認
@@ -190,7 +189,7 @@ LogFilePath=BonDriver_IEEE1394.log
 
 **対処法**:
 1. IEEE 1394ケーブルが正しく接続されているか確認
-2. DV機器の電源が入っているか確認
+2. HDV機器の電源が入っているか確認
 3. Windowsのデバイスマネージャーでデバイスが認識されているか確認
 4. ドライバーが正しくインストールされているか確認
 
@@ -263,7 +262,7 @@ LogFilePath=BonDriver_IEEE1394.log
 
 - タイムコード取得
 - 複数デバイスの同時使用
-- DVカメラの撮影制御
+- HDVカメラの撮影制御
 - デバイスの詳細設定（ビットレート、画質など）
 - テープの自動頭出し
 
@@ -286,7 +285,7 @@ MIT License
 
 ## 更新履歴
 
-### Version 1.0.0 (2024)
+### Version 1.0.0 (2026)
 
 - 初回リリース
 - IEEE 1394デバイスの基本サポート

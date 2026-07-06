@@ -1,6 +1,6 @@
 ﻿# BonDriver_IEEE1394
 
-IEEE 1394（FireWire/i.LINK）デバイス用のBonDriverです。DV機器からのTSストリーム取得と、AV/C Tape Recorder/Playerの操作機能を提供します。
+IEEE 1394（FireWire/i.LINK）デバイス用のBonDriverです。HDV機器からのTSストリーム取得と、AV/C Tape Recorder/Playerの操作機能を提供します。
 
 ## 機能
 
@@ -11,9 +11,8 @@ IEEE 1394（FireWire/i.LINK）デバイス用のBonDriverです。DV機器から
 
 ## 対応デバイス
 
-- IEEE 1394（FireWire/i.LINK）接続のDVカメラ
-- DV VTR
-- DVデッキ
+- IEEE 1394（FireWire/i.LINK）接続のHDVカメラ
+- D-VHS デッキ
 - その他のAV/C準拠テープレコーダー/プレイヤー
 
 ## ビルド要件
