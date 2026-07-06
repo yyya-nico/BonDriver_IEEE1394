@@ -8,6 +8,8 @@ void PrintUsage()
     printf("\n=== IEEE 1394 BonDriver テストアプリケーション ===\n");
     printf("コマンド:\n");
     printf("  O - 電源オン\n");
+    printf("  X - 電源オフ\n");
+    printf("  W - スタンバイ\n");
     printf("  P - 再生\n");
     printf("  S - 停止\n");
     printf("  F - 早送り\n");
@@ -71,6 +73,30 @@ int main()
                 else
                 {
                     printf("電源オンに失敗しました（この機能をサポートしていないデバイスかもしれません）\n");
+                }
+                break;
+
+            case 'X':
+                printf("\n電源オフ...\n");
+                if (pIEEE1394Driver->PowerOff())
+                {
+                    printf("電源をオフにしました\n");
+                }
+                else
+                {
+                    printf("電源オフに失敗しました（この機能をサポートしていないデバイスかもしれません）\n");
+                }
+                break;
+
+            case 'W':
+                printf("\nスタンバイ...\n");
+                if (pIEEE1394Driver->Standby())
+                {
+                    printf("スタンバイにしました\n");
+                }
+                else
+                {
+                    printf("スタンバイに失敗しました（この機能をサポートしていないデバイスかもしれません）\n");
                 }
                 break;
 

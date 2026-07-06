@@ -51,7 +51,10 @@ public:
     STRUCT_IBONDRIVER2& GetBonStruct2() { return m_bonStruct2; }
 
     // AV/C Tape control methods
+    BOOL SetDevicePower(long powerState);
     BOOL PowerOn(void);
+    BOOL PowerOff(void);
+    BOOL Standby(void);
     BOOL Play(void);
     BOOL Stop(void);
     BOOL FastForward(void);

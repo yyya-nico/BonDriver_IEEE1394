@@ -499,30 +499,35 @@ BOOL CBonDriver_IEEE1394::EnumerateIEEE1394Devices(void)
     return FALSE;
 }
 
-BOOL CBonDriver_IEEE1394::PowerOn(void)
+BOOL CBonDriver_IEEE1394::SetDevicePower(long powerState)
 {
     if (!m_pSourceFilter)
         return FALSE;
 
-    // Try IAMExtTransport interface for power control
-    IAMExtTransport* pTransport = nullptr;
-    HRESULT hr = m_pSourceFilter->QueryInterface(IID_IAMExtTransport, (void**)&pTransport);
-    if (SUCCEEDED(hr))
-    {
-        // Set device power to ON
-        // Note: Some devices may not support power control via IAMExtTransport
-        long power = 1; // 1 = ON, 0 = OFF
-        hr = pTransport->put_LocalControl(power);
-        pTransport->Release();
+    IAMExtDevice* pExtDevice = nullptr;
+    HRESULT hr = m_pSourceFilter->QueryInterface(IID_IAMExtDevice, (void**)&pExtDevice);
+    if (FAILED(hr))
+        return FALSE;
 
-        if (SUCCEEDED(hr))
-        {
-            return TRUE;
-        }
-    }
+    hr = pExtDevice->put_DevicePower(powerState);
+    pExtDevice->Release();
 
-    // Power control may not be supported by all devices
-    return FALSE;
+    return SUCCEEDED(hr) ? TRUE : FALSE;
+}
+
+BOOL CBonDriver_IEEE1394::PowerOn(void)
+{
+    return SetDevicePower(ED_POWER_ON);
+}
+
+BOOL CBonDriver_IEEE1394::PowerOff(void)
+{
+    return SetDevicePower(ED_POWER_OFF);
+}
+
+BOOL CBonDriver_IEEE1394::Standby(void)
+{
+    return SetDevicePower(ED_POWER_STANDBY);
 }
 
 BOOL CBonDriver_IEEE1394::Play(void)
