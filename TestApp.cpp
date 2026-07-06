@@ -37,7 +37,7 @@ int main()
     {
         printf("エラー: IEEE 1394デバイスを開けませんでした\n");
         printf("  - IEEE 1394デバイスが接続されているか確認してください\n");
-        printf("  - DV機器の電源が入っているか確認してください\n");
+        printf("  - HDV機器の電源が入っているか確認してください\n");
         pDriver->Release();
         return 1;
     }
